@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="crm_exp_revenue_hours.crm_lead_view" model="ir.ui.view">
+        <field name="name">crm_lead_view</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h2" position="after">
+                            <h2 class="o_row row no-gutters d-flex">
+                                <div class="col">
+                                    <label for="planned_revenue_hours" class="oe_edit_only"/>
+                                    <div class="o_row">
+                                        <field name="planned_revenue_hours" class="oe_inline" widget="float_time" />
+                                        <span class="oe_grey">  at </span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="planned_revenue_product" class="oe_edit_only"/>
+                                    <div class="o_row d-flex">
+                                        <field name="planned_revenue_product"  class="oe_inline"/>
+                                        <span class="oe_grey">  rate </span>
+                                    </div>
+                                </div>
+                            </h2>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
