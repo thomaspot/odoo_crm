@@ -7,7 +7,7 @@
     'version': '12.0.1.0.0',
     'category': 'CRM',
     'website': 'https://www.open2bizz.nl/',
-    'author': 'Open2Bizz,
+    'author': 'Open2Bizz',
     'license': 'LGPL-3',
     'installable': True,
     'depends': [
