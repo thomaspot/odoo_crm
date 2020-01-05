@@ -1,56 +1,57 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
-    <record id="crm_exp_revenue_hours.crm_lead_view" model="ir.ui.view">
-        <field name="name">crm_lead_view</field>
-        <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
-        <field name="arch" type="xml">
-            <xpath expr="//h2" position="after">
-                            <h2 class="o_row row no-gutters d-flex">
-                                <div class="col">
-                                    <label for="planned_revenue_hours" class="oe_edit_only"/>
-                                    <div class="o_row">
-                                        <field name="planned_revenue_hours" class="oe_inline" widget="float_time" />
-                                        <span class="oe_grey">  at </span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <label for="planned_revenue_product" class="oe_edit_only"/>
-                                    <div class="o_row d-flex">
-                                        <field name="planned_revenue_product"  class="oe_inline"/>
-                                        <span class="oe_grey">  rate </span>
-                                    </div>
-                                </div>
-                            </h2>
-            </xpath>
-        </field>
-    </record>
-
-    <record id="crm_exp_revenue_hours.crm.lead.kanban.lead_hours" model="ir.ui.view">
-        <field name="name">crm.lead.kanban.lead_hours</field>
-        <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
-        <field name="arch" type="xml">
-        <xpath expr="//field[@name='planned_revenue']" position="after">
-           <field name="planned_revenue_hours"/>
-        </xpath>    
-
-	<xpath expr="//progressbar" position="replace">
-		<progressbar field="activity_state" colors="{&quot;planned&quot;: &quot;success&quot;, &quot;today&quot;: &quot;warning&quot;, &quot;overdue&quot;: &quot;danger&quot;}" sum_field="planned_revenue_hours" help="This bar allows to filter the opportunities based on scheduled activities."/>
-	</xpath>        
+  <record id="crm_exp_revenue_hours.crm_lead_view" model="ir.ui.view">
+    <field name="name">crm_lead_view</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <field name="arch" type="xml">
+      <xpath expr="//h2" position="after">
+        <h2 class="o_row row no-gutters d-flex">
+          <div class="col">
+            <label for="planned_revenue_hours" class="oe_edit_only"/>
+            <div class="o_row">
+              <field name="planned_revenue_hours" class="oe_inline" widget="float_time"/>
+              <span class="oe_grey">  at </span>
+            </div>
+          </div>
+          <div class="col">
+            <label for="planned_revenue_product" class="oe_edit_only"/>
+            <div class="o_row d-flex">
+              <field name="planned_revenue_product" class="oe_inline"/>
+              <span class="oe_grey">  rate </span>
+            </div>
+          </div>
+        </h2>
+      </xpath>
     </field>
-    </record>
-
-    <record id="crm_exp_revenue_hours.crm.crm_case_tree_view_oppor_hours" model="ir.ui.view">
-        <field name="name">crm.lead.kanban.lead_hours</field>
-        <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
-        <field name="arch" type="xml">
-        <xpath expr="//field[@name='planned_revenue']" position="before">
-           <field name="planned_revenue_hours" sum="Expected Revenues Hours"/>
-        </xpath>    
-	</field>
-    </record>
-    
+  </record>
+  <record id="crm_exp_revenue_hours.crm_lead_kanban_lead_hours" model="ir.ui.view">
+    <field name="name">crm.lead.kanban.lead_hours</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='planned_revenue']" position="after">
+        <field name="planned_revenue_hours"/>
+      </xpath>
+      <xpath expr="//div[@class='text-muted o_kanban_record_subtitle']" position="inside">
+        <br/>
+        <span> Hours: </span>
+        <t t-if="record.planned_revenue_hours.raw_value"/>
+        <field name="planned_revenue_hours" widget="float_time"/>
+      </xpath>
+      <xpath expr="//progressbar" position="replace">
+        <progressbar field="activity_state" colors="{&quot;planned&quot;: &quot;success&quot;, &quot;today&quot;: &quot;warning&quot;, &quot;overdue&quot;: &quot;danger&quot;}" sum_field="planned_revenue_hours" help="This bar allows to filter the opportunities based on scheduled activities."/>
+      </xpath>
+    </field>
+  </record>
+  <record id="crm_exp_revenue_hours.crm_case_tree_view_oppor_hours" model="ir.ui.view">
+    <field name="name">crm.lead.kanban.lead_hours</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='planned_revenue']" position="before">
+        <field name="planned_revenue_hours" sum="Expected Revenues Hours"/>
+      </xpath>
+    </field>
+  </record>
 </odoo>
