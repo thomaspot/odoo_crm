@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_exp_revenue_hours
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-05 15:48+0000\n"
+"PO-Revision-Date: 2020-01-05 16:50+0100\n"
+"Last-Translator: Thomas Pot <t.pot@open2bizz.nl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: crm_exp_revenue_hours
+#: model_terms:ir.ui.view,arch_db:crm_exp_revenue_hours.crm_lead_kanban_lead_hours
+msgid ""
+"<br/>\n"
+"        <span> Hours: </span>"
+msgstr ""
+"<br/>\n"
+"        <span> Uren: </span>"
+
+#. module: crm_exp_revenue_hours
+#: model_terms:ir.ui.view,arch_db:crm_exp_revenue_hours.crm_lead_view
+msgid "<span class=\"oe_grey\">  at </span>"
+msgstr "<span class=\"oe_grey\">  aan </span>"
+
+#. module: crm_exp_revenue_hours
+#: model_terms:ir.ui.view,arch_db:crm_exp_revenue_hours.crm_lead_view
+msgid "<span class=\"oe_grey\">  rate </span>"
+msgstr "<span class=\"oe_grey\">  tarief </span>"
+
+#. module: crm_exp_revenue_hours
+#: model_terms:ir.ui.view,arch_db:crm_exp_revenue_hours.crm_case_tree_view_oppor_hours
+msgid "Expected Revenues Hours"
+msgstr "Verwachte omzet in Uren"
+
+#. module: crm_exp_revenue_hours
+#: model:ir.model.fields,field_description:crm_exp_revenue_hours.field_crm_lead__planned_revenue_product
+msgid "Hour rate"
+msgstr "Uurtarief"
+
+#. module: crm_exp_revenue_hours
+#: model:ir.model,name:crm_exp_revenue_hours.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Prospect"
+
+#. module: crm_exp_revenue_hours
+#: model:ir.model.fields,field_description:crm_exp_revenue_hours.field_crm_lead__planned_revenue_amount
+msgid "Planned Revenue Amount"
+msgstr "Verwachte omzet Uren x tarief"
+
+#. module: crm_exp_revenue_hours
+#: model:ir.model.fields,field_description:crm_exp_revenue_hours.field_crm_lead__planned_revenue_hours
+msgid "Planned revenue in Hours"
+msgstr "Verwachte omzet in Uren"
+
+#. module: crm_exp_revenue_hours
+#: model_terms:ir.ui.view,arch_db:crm_exp_revenue_hours.crm_lead_kanban_lead_hours
+msgid "This bar allows to filter the opportunities based on scheduled activities."
+msgstr "Deze balk staat u toe om prospects te filteren gebaseerd op geplande activiteiten."
