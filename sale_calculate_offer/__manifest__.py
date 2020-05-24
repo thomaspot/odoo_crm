@@ -16,3 +16,4 @@
     'data': [
         'views/sale_calculate_views.xml',
     ]
+}
